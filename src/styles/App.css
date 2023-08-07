@@ -1,0 +1,15 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  height: 100vh;
+  background-color: #a89b9d;
+}
+
+.main-area {
+  display: flex;
+  height: 100%;
+}

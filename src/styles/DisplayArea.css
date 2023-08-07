@@ -1,0 +1,20 @@
+.display-area {
+  display: grid;
+  grid-template-rows: 10% 90%;
+  width: 50%;
+}
+
+#display-nav,
+#preview {
+  background-color: #cfcfea;
+}
+
+#display-nav {
+  box-shadow: 0 2px 2px 0px #2a2c24 ;
+}
+
+#preview {
+  margin: 0 auto;
+  margin: 25px 100px;
+  box-shadow: 1px 1px 5px 0px #2a2c24;
+}
