@@ -1,6 +1,6 @@
-#CV Application
+# CV Application
 
-##Objective:
+## Objective:
 Create a small CV application using React. The app includes the following:
 
 - A section to add general information like name, email and phone number
