@@ -3,3 +3,31 @@
   width: 50%;
   background-color: #575a4b;
 }
+
+#input-nav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 50px;
+  padding-left: 5px;
+  background-color: #2a2c24;
+}
+
+.input-icons {
+  width: 35px;
+  margin: 0;
+  padding: 25px 15px 25px 5px;
+  border-top: 2px solid #575a4b;
+  border-left: 2px solid #575a4b;
+  border-bottom: 2px solid #575a4b;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.input-icons:hover {
+  background-color: #575a4b;
+}
+
+.current {
+  background-color: #575a4b;
+}
