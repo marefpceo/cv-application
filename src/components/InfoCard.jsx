@@ -7,6 +7,7 @@ function InfoSection({isActive}) {
 
   return (
     <div id="info-card" style={{display: isActive ? 'flex' : 'none'}}>
+      <h2>Information</h2>
       <form>
         <label htmlFor='firstName'>First Name: </label>
           <input
@@ -44,6 +45,12 @@ function InfoSection({isActive}) {
             onChange={e => setInputValue({ ...inputValue, phone: e.target.value})}
           />
       </form>
+
+      <div className="buttons">
+          <button type='button'>Edit</button>
+          <button type='submit'>Save</button>
+          <button type="reset">Reset</button>
+      </div>
     </div>
   )
 }

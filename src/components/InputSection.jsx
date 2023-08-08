@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import InfoSection from './InputCards'
+import InfoSection from './InfoCard.jsx'
 import infoIconLight from '../assets/info-icon-light.png'
 import schoolIconLight from '../assets/school-icon-light.png'
 import workIconLight from '../assets/work-history-icon-light.png'
