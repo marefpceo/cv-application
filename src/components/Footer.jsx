@@ -1,9 +1,5 @@
 function Footer() {
-  return (
-    <footer>
-      Copyright
-    </footer>
-  )
+  return <footer>Copyright</footer>;
 }
 
 export default Footer;
