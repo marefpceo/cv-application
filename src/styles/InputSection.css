@@ -1,4 +1,5 @@
 .input-section {
+  display: flex;
   height: 100%;
   width: 50%;
   background-color: #575a4b;
@@ -26,8 +27,15 @@
 
 .input-icons:hover {
   background-color: #575a4b;
+  cursor: pointer;
 }
 
 .current {
   background-color: #575a4b;
+}
+
+.cards {
+  border: 1px solid orange;
+  width: 100%;
+  padding: 4rem;
 }

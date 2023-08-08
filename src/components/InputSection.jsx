@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import InfoSection from './InputCards'
 import infoIconLight from '../assets/info-icon-light.png'
 import schoolIconLight from '../assets/school-icon-light.png'
 import workIconLight from '../assets/work-history-icon-light.png'
@@ -28,7 +29,9 @@ function InputSection() {
       </nav>
 
       <div className="cards">
-
+        <InfoSection 
+          isActive={activeIndex === 0}
+        />
       </div>
     </section>
   )
