@@ -5,6 +5,7 @@ import infoIconLight from '../assets/info-icon-light.png';
 import schoolIconLight from '../assets/school-icon-light.png';
 import workIconLight from '../assets/work-history-icon-light.png';
 import '../styles/InputSection.css';
+import Education from './EducationCard.jsx';
 
 function InputSection() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -34,6 +35,7 @@ function InputSection() {
 
       <div className="cards">
         <InfoSection isActive={activeIndex === 0} />
+        <Education isActive={activeIndex === 1} />
       </div>
     </section>
   );

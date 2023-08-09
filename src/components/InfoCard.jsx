@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import '../styles/InfoCard.css';
 
 function InfoSection({ isActive }) {
-  const [inputValue, setInputValue] = useState({
+  const [infoInputValue, setInfoInputValue] = useState({
     firstName: '',
     lastName: '',
     title: '',
@@ -19,45 +19,45 @@ function InfoSection({ isActive }) {
         <input
           type="text"
           name="firstName"
-          value={inputValue.firstName}
+          value={infoInputValue.firstName}
           onChange={(e) =>
-            setInputValue({ ...inputValue, firstName: e.target.value })
+            setInfoInputValue({ ...infoInputValue, firstName: e.target.value })
           }
         />
         <label htmlFor="lastName">Last Name: </label>
         <input
           type="text"
           name="lastName"
-          value={inputValue.lastName}
+          value={infoInputValue.lastName}
           onChange={(e) =>
-            setInputValue({ ...inputValue, lastName: e.target.value })
+            setInfoInputValue({ ...infoInputValue, lastName: e.target.value })
           }
         />
         <label htmlFor="title">Title: </label>
         <input
           type="text"
           name="title"
-          value={inputValue.title}
+          value={infoInputValue.title}
           onChange={(e) =>
-            setInputValue({ ...inputValue, title: e.target.value })
+            setInfoInputValue({ ...infoInputValue, title: e.target.value })
           }
         />
         <label htmlFor="email">Email: </label>
         <input
           type="email"
           name="email"
-          value={inputValue.email}
+          value={infoInputValue.email}
           onChange={(e) =>
-            setInputValue({ ...inputValue, email: e.target.value })
+            setInfoInputValue({ ...infoInputValue, email: e.target.value })
           }
         />
         <label htmlFor="phone">Phone: </label>
         <input
           type="tel"
           name="phone"
-          value={inputValue.phone}
+          value={infoInputValue.phone}
           onChange={(e) =>
-            setInputValue({ ...inputValue, phone: e.target.value })
+            setInfoInputValue({ ...infoInputValue, phone: e.target.value })
           }
         />
       </form>
@@ -65,7 +65,7 @@ function InfoSection({ isActive }) {
       <div className="buttons">
         <button type="button">Edit</button>
         <button type="submit">Save</button>
-        <button type="reset">Reset</button>
+        <button type="reset">Clear</button>
       </div>
     </div>
   );
