@@ -1,28 +1,29 @@
 #education-card {
   display: flex;
   flex-direction: column;
+  width: 0 auto;
 }
 
-form {
+.education-form {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 1fr 2fr;
   row-gap: 10px;
 }
 
-label {
+.education-form label {
   text-align: end;
   padding-right: 4rem;
 }
 
-input {
-  width: 100%;
+.education-form input {
+  width: 0 auto;
 }
 
-.buttons {
+.education-buttons {
   margin-top: 2rem;
 }
 
-button {
+.education-buttons button {
   margin: 0 2rem;
   width: 100px;
   height: 25px;

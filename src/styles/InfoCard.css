@@ -1,28 +1,29 @@
 #info-card {
   display: flex;
   flex-direction: column;
+  width: 0 auto;
 }
 
-form {
+.info-form {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 1fr 2fr;
   row-gap: 10px;
 }
 
-label {
+.info-form label {
   text-align: end;
   padding-right: 4rem;
 }
 
-input {
-  width: 100%;
+.info-form input {
+  width: 0 auto;
 }
 
-.buttons {
+.info-buttons {
   margin-top: 2rem;
 }
 
-button {
+.info-buttons button {
   margin: 0 2rem;
   width: 100px;
   height: 25px;

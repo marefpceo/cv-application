@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types'
-import '../styles/EducationCard.css'
-import { useState } from 'react'
+import { useState } from 'react';
+import PropTypes from 'prop-types';
+import '../styles/EducationCard.css';
 
 function Education({ isActive }) {
   const [educationInputValue, setEducationInputValue] = useState({
@@ -15,7 +15,7 @@ function Education({ isActive }) {
   return(
     <div id='education-card' style={{ display: isActive ? 'flex' : 'none' }}>
       <h2>Education</h2>
-      <form>
+      <form className='education-form'>
         <label htmlFor='school'>School: </label>
         <input 
           type='text'
@@ -71,7 +71,7 @@ function Education({ isActive }) {
         />
       </form>
 
-      <div className='buttons'>
+      <div className='education-buttons'>
         <button type='button'>Add</button>
         <button type='submit'>Save</button>
       </div>

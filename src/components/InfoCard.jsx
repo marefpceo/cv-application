@@ -14,7 +14,7 @@ function InfoSection({ isActive }) {
   return (
     <div id="info-card" style={{ display: isActive ? 'flex' : 'none' }}>
       <h2>Information</h2>
-      <form>
+      <form className='info-form'>
         <label htmlFor="firstName">First Name: </label>
         <input
           type="text"
@@ -62,7 +62,7 @@ function InfoSection({ isActive }) {
         />
       </form>
 
-      <div className="buttons">
+      <div className="info-buttons">
         <button type="button">Edit</button>
         <button type="submit">Save</button>
         <button type="reset">Clear</button>
