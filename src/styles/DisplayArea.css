@@ -14,7 +14,8 @@
 }
 
 #preview {
-  margin: 0 auto;
-  margin: 25px 100px;
+  margin: 5% auto;
+  width: 61%;
+  height: 90%;
   box-shadow: 1px 1px 5px 0px #2a2c24;
 }

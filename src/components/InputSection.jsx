@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import InfoSection from './InfoCard.jsx';
+import InfoCard from './InfoCard.jsx';
 import infoIconLight from '../assets/info-icon-light.png';
 import schoolIconLight from '../assets/school-icon-light.png';
 import workIconLight from '../assets/work-history-icon-light.png';
@@ -8,7 +8,7 @@ import '../styles/InputSection.css';
 import Education from './EducationCard.jsx';
 import Experience from './ExperienceCard.jsx';
 
-function InputSection() {
+function InputSection({ handleChange }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
@@ -35,7 +35,10 @@ function InputSection() {
       </nav>
 
       <div className="cards">
-        <InfoSection isActive={activeIndex === 0} />
+        <InfoCard 
+          isActive={activeIndex === 0} 
+          handleChange={handleChange}
+        />
         <Education isActive={activeIndex === 1} />
         <Experience isActive={activeIndex === 2} />
       </div>
@@ -55,10 +58,14 @@ function InputNavButtons({ icon, alt, isActive, onShow }) {
 }
 
 InputNavButtons.propTypes = {
-  icon: PropTypes.symbol,
+  icon: PropTypes.string,
   alt: PropTypes.string.isRequired,
   isActive: PropTypes.bool,
-  onShow: PropTypes.func,
+  onShow: PropTypes.func
 };
+
+InputSection.propTypes = {
+  handleChange: PropTypes.func
+}
 
 export default InputSection;

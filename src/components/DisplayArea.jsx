@@ -2,11 +2,11 @@ import DisplayNav from './DisplayNav';
 import Preview from './Preview';
 import '../styles/DisplayArea.css';
 
-function DisplayArea() {
+function DisplayArea({ ...infoInputValue }) {
   return (
     <div className="display-area">
       <DisplayNav />
-      <Preview />
+      <Preview {...infoInputValue}/>
     </div>
   );
 }
