@@ -1,16 +1,16 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import PropTypes from 'prop-types';
 import '../styles/EducationCard.css';
 
-function Education({ isActive }) {
-  const [educationInputValue, setEducationInputValue] = useState({
-    school: '',
-    fieldOfStudy: '',
-    graduationDate: '',
-    city: '',
-    state: '',
-    country: '',
-  });
+function Education({ isActive, handleEducationChange, school, fieldOfStudy, graduationDate, city, state, country }) {
+  // const [educationInputValue, setEducationInputValue] = useState({
+  //   school: '',
+  //   fieldOfStudy: '',
+  //   graduationDate: '',
+  //   city: '',
+  //   state: '',
+  //   country: '',
+  // });
 
   return (
     <div id="education-card" style={{ display: isActive ? 'flex' : 'none' }}>
@@ -20,78 +20,48 @@ function Education({ isActive }) {
         <input
           type="text"
           name="school"
-          value={educationInputValue.school}
-          onChange={(e) =>
-            setEducationInputValue({
-              ...educationInputValue,
-              school: e.target.value,
-            })
-          }
+          value={school}
+          onChange={handleEducationChange}
         />
 
         <label htmlFor="fieldOfStudy">Field of Study: </label>
         <input
           type="text"
-          name="titleOfStudy"
-          value={educationInputValue.fieldOfStudy}
-          onChange={(e) =>
-            setEducationInputValue({
-              ...educationInputValue,
-              fieldOfStudy: e.target.value,
-            })
-          }
+          name="fieldOfStudy"
+          value={fieldOfStudy}
+          onChange={handleEducationChange}
         />
 
         <label htmlFor="graduationDate">Graduation Date: </label>
         <input
           type="date"
           name="graduationDate"
-          value={educationInputValue.graduationDate}
-          onChange={(e) =>
-            setEducationInputValue({
-              ...educationInputValue,
-              graduationDate: e.target.value,
-            })
-          }
+          value={graduationDate}
+          onChange={handleEducationChange}
         />
 
         <label htmlFor="city">City: </label>
         <input
           type="text"
           name="city"
-          value={educationInputValue.city}
-          onChange={(e) =>
-            setEducationInputValue({
-              ...educationInputValue,
-              city: e.target.value,
-            })
-          }
+          value={city}
+          onChange={handleEducationChange}
         />
 
         <label htmlFor="state">State: </label>
         <input
           type="text"
           name="state"
-          value={educationInputValue.state}
-          onChange={(e) =>
-            setEducationInputValue({
-              ...educationInputValue,
-              state: e.target.value,
-            })
-          }
+          value={state}
+          onChange={handleEducationChange}
         />
 
         <label htmlFor="country">Country: </label>
         <input
           type="text"
           name="country"
-          value={educationInputValue.country}
-          onChange={(e) =>
-            setEducationInputValue({
-              ...educationInputValue,
-              country: e.target.value,
-            })
-          }
+          value={country}
+          onChange={handleEducationChange}
         />
       </form>
 
@@ -105,6 +75,13 @@ function Education({ isActive }) {
 
 Education.propTypes = {
   isActive: PropTypes.bool,
+  handleEducationChange: PropTypes.func,
+  school: PropTypes.string,
+  fieldOfStudy: PropTypes.string,
+  graduationDate: PropTypes.string,
+  city: PropTypes.string,
+  state: PropTypes.string,
+  country: PropTypes.string
 };
 
 export default Education;

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import '../styles/InfoCard.css';
 
-function InfoCard({ isActive, handleChange, firstName, lastName, title, email, phone  }) {
+function InfoCard({ isActive, handleInfoChange, firstName, lastName, title, email, phone  }) {
 
   return (
     <div id="info-card" style={{ display: isActive ? 'flex' : 'none' }}>
@@ -12,35 +12,35 @@ function InfoCard({ isActive, handleChange, firstName, lastName, title, email, p
           type="text"
           name="firstName"
           value={firstName}
-          onChange={handleChange}
+          onChange={handleInfoChange}
         />
         <label htmlFor="lastName">Last Name: </label>
         <input
           type="text"
           name="lastName"
           value={lastName}
-          onChange={handleChange}
+          onChange={handleInfoChange}
         />
         <label htmlFor="title">Title: </label>
         <input
           type="text"
           name="title"
           value={title}
-          onChange={handleChange}
+          onChange={handleInfoChange}
         />
         <label htmlFor="email">Email: </label>
         <input
           type="email"
           name="email"
           value={email}
-          onChange={handleChange}
+          onChange={handleInfoChange}
         />
         <label htmlFor="phone">Phone: </label>
         <input
           type="tel"
           name="phone"
           value={phone}
-          onChange={handleChange}
+          onChange={handleInfoChange}
         />
       </form>
       <div className="info-buttons">
@@ -54,7 +54,7 @@ function InfoCard({ isActive, handleChange, firstName, lastName, title, email, p
 
 InfoCard.propTypes = {
   isActive: PropTypes.bool,
-  handleChange: PropTypes.func,
+  handleInfoChange: PropTypes.func,
   firstName: PropTypes.string,
   lastName: PropTypes.string,
   title: PropTypes.string,

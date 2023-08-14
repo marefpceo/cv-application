@@ -14,10 +14,26 @@ function App() {
     phone: '',
   });
 
+  const [educationInputValue, setEducationInputValue] = useState({
+    school: '',
+    fieldOfStudy: '',
+    graduationDate: '',
+    city: '',
+    state: '',
+    country: '',
+  });
+
   function handleInfoCardChange(e) {
     const value = e.target.value;
     setInfoInputValue({
       ...infoInputValue,
+      [e.target.name]: value});
+  }
+
+  function handleEducationCardChange(e) {
+    const value = e.target.value;
+    setEducationInputValue({
+      ...educationInputValue,
       [e.target.name]: value});
   }
 
@@ -26,10 +42,12 @@ function App() {
       <Header />
       <div className="main-area">
         <InputSection  
-          handleChange={handleInfoCardChange} 
+          handleInfoChange={handleInfoCardChange} 
+          handleEducationChange={handleEducationCardChange}
           {...infoInputValue}
+          {...educationInputValue}
         />
-        <DisplayArea {...infoInputValue} />
+        <DisplayArea {...infoInputValue} {...educationInputValue} />
       </div>
       <Footer />
     </>
