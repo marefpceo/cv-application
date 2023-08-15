@@ -18,7 +18,7 @@ function Preview({ firstName, lastName, title, email, phone, school, fieldOfStud
       </header>
 
       <aside id='preview-aside'>
-        
+     
         <div className='preview-contact'>
           <div id='profile-image'>
             <img src={profileImage} alt='Blank profile'/>
@@ -31,26 +31,37 @@ function Preview({ firstName, lastName, title, email, phone, school, fieldOfStud
           </ul>
         </div>
 
-        <h3>Education</h3>
-        <hr/>
-        
-        <p>{school} <br/> {fieldOfStudy} <br/> {graduationDate} <br/> {schoolCity} <br/> {schoolState} <br/> {schoolCountry} </p>
+        <div className='preview-education'>
+          <h3>Education</h3>
+          <hr/>
+          
+          <div className='school-info'>
+            <p>{graduationDate} </p>
+            <div>
+              <p>{school}</p>
+              <p>{fieldOfStudy}</p>
+              <p>{schoolCity}, {schoolState}  {schoolCountry}</p>
+            </div>
+          </div>
+        </div>
       </aside>
 
       <section className='preview-body'>
       <h3>Experience</h3>
+      <hr/>
         <div className='experience-div'>
-          <div className='dates'>
+          <div className='experience-dates'>
             {startDate}-{endDate}
           </div>
-          <div className='company'>
-            <h4>{company}</h4>
-            <p>{position}</p>
-          </div>
-
-          <div className='company-location'>
-            {companyCity}
-            {companyState}
+          <div className='company-info'>
+            <div className='company'>
+              <h4>{company}</h4>
+              <p>{position}</p>
+            </div>
+            <div className='company-location'>
+              <p>{companyCity}</p> 
+              <p>{companyState}</p>
+            </div>
           </div>
           
         </div>
