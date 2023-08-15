@@ -4,18 +4,10 @@
   width: 50%;
 }
 
-#display-nav,
-#preview {
+#display-nav {
   background-color: #cfcfea;
 }
 
 #display-nav {
   box-shadow: 0 2px 2px 0px #2a2c24;
-}
-
-#preview {
-  margin: 5% auto;
-  width: 61%;
-  height: 90%;
-  box-shadow: 1px 1px 5px 0px #2a2c24;
 }

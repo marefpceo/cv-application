@@ -1,16 +1,8 @@
-// import { useState } from 'react';
 import PropTypes from 'prop-types';
 import '../styles/EducationCard.css';
 
-function Education({ isActive, handleEducationChange, school, fieldOfStudy, graduationDate, city, state, country }) {
-  // const [educationInputValue, setEducationInputValue] = useState({
-  //   school: '',
-  //   fieldOfStudy: '',
-  //   graduationDate: '',
-  //   city: '',
-  //   state: '',
-  //   country: '',
-  // });
+function Education({ isActive, handleEducationChange, school, fieldOfStudy, graduationDate, 
+  schoolCity, schoolState, schoolCountry }) {
 
   return (
     <div id="education-card" style={{ display: isActive ? 'flex' : 'none' }}>
@@ -40,27 +32,27 @@ function Education({ isActive, handleEducationChange, school, fieldOfStudy, grad
           onChange={handleEducationChange}
         />
 
-        <label htmlFor="city">City: </label>
+        <label htmlFor="schoolCity">City: </label>
         <input
           type="text"
-          name="city"
-          value={city}
+          name="schoolCity"
+          value={schoolCity}
           onChange={handleEducationChange}
         />
 
-        <label htmlFor="state">State: </label>
+        <label htmlFor="schoolState">State: </label>
         <input
           type="text"
-          name="state"
-          value={state}
+          name="schoolState"
+          value={schoolState}
           onChange={handleEducationChange}
         />
 
-        <label htmlFor="country">Country: </label>
+        <label htmlFor="schoolCountry">Country: </label>
         <input
           type="text"
-          name="country"
-          value={country}
+          name="schoolCountry"
+          value={schoolCountry}
           onChange={handleEducationChange}
         />
       </form>
@@ -79,9 +71,9 @@ Education.propTypes = {
   school: PropTypes.string,
   fieldOfStudy: PropTypes.string,
   graduationDate: PropTypes.string,
-  city: PropTypes.string,
-  state: PropTypes.string,
-  country: PropTypes.string
+  schoolCity: PropTypes.string,
+  schoolState: PropTypes.string,
+  schoolCountry: PropTypes.string
 };
 
 export default Education;

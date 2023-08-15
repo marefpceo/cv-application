@@ -18,9 +18,18 @@ function App() {
     school: '',
     fieldOfStudy: '',
     graduationDate: '',
-    city: '',
-    state: '',
-    country: '',
+    schoolCity: '',
+    schoolState: '',
+    schoolCountry: '',
+  });
+
+  const [experienceInputValue, setExperienceInputValue] = useState({
+    company: '',
+    companyCity: '',
+    companyState: '',
+    position: '',
+    startDate: '',
+    endDate: '',
   });
 
   function handleInfoCardChange(e) {
@@ -37,18 +46,28 @@ function App() {
       [e.target.name]: value});
   }
 
+  function handleExperienceCardChange(e) {
+    const value = e.target.value;
+    setExperienceInputValue({
+      ...experienceInputValue,
+      [e.target.name]: value});
+  }
+
   return (
     <>
       <Header />
-      <div className="main-area">
-        <InputSection  
-          handleInfoChange={handleInfoCardChange} 
-          handleEducationChange={handleEducationCardChange}
-          {...infoInputValue}
-          {...educationInputValue}
-        />
-        <DisplayArea {...infoInputValue} {...educationInputValue} />
-      </div>
+        <div className="main-area">
+          <InputSection  
+            handleInfoChange={handleInfoCardChange} 
+            handleEducationChange={handleEducationCardChange}
+            handleExperienceChange={handleExperienceCardChange}
+          />
+          <DisplayArea 
+            infoInputValue={infoInputValue} 
+            educationInputValue={educationInputValue} 
+            experienceInputValue={experienceInputValue}  
+          />
+        </div>
       <Footer />
     </>
   );

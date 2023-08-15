@@ -1,83 +1,75 @@
-import { useState } from 'react';
-import PropType from 'prop-types';
+import PropTypes from 'prop-types';
 import '../styles/ExperienceCard.css';
 
-function Experience({ isActive }) {
-  const [experienceInputValue, setExperienceInputValue] = useState({
-    company: '',
-    city: '',
-    state: '',
-    position: '',
-    startDate: '',
-    endDate: '',
-  });
+function Experience({ isActive, handleExperienceChange, company, companyCity, companyState, position,
+  startDate, endDate  }) {
 
   return (
-    <div id='experience-card' style={{display: isActive ? 'flex' : 'none'}}>
+    <div id="experience-card" style={{display: isActive ? 'flex' : 'none'}}>
       <h2>Experience</h2>
-      <form className='experience-form'>
-            <div className='company'>
-              <label htmlFor='company'>Company: </label>
+      <form className="experience-form">
+            <div className="company">
+              <label htmlFor="company">Company: </label>
               <input
-                type='text'
-                name='company'
-                value={experienceInputValue.company}
-                onChange={(e) => setExperienceInputValue({ ...experienceInputValue, company: e.target.value})}
+                type="text"
+                name="company"
+                value={company}
+                onChange={handleExperienceChange}
               />
             </div>
           
 
-          <div className='location'>
-            <label htmlFor='city'>City: </label>
+          <div className="location">
+            <label htmlFor="companyCity">City: </label>
             <input
-              type='text'
-              name='city'
-              value={experienceInputValue.city}
-              onChange={(e) => setExperienceInputValue({ ...experienceInputValue, city: e.target.value})}
+              type="text"
+              name="companyCity"
+              value={companyCity}
+              onChange={handleExperienceChange}
             />
-            <label htmlFor='state'>State: </label>
+            <label htmlFor="companyState">State: </label>
             <input
-              type='text'
-              name='state'
-              value={experienceInputValue.state}
-              onChange={(e) => setExperienceInputValue({ ...experienceInputValue, state: e.target.value})}
-            />
-          </div>
-
-
-          <div className='position'>
-            <label htmlFor='position'>Position: </label>
-            <input
-              type='text'
-              name='position'
-              value={experienceInputValue.position}
-              onChange={(e) => setExperienceInputValue({ ...experienceInputValue, position: e.target.value})}
+              type="text"
+              name="companyState"
+              value={companyState}
+              onChange={handleExperienceChange}
             />
           </div>
 
 
-          <div className='dates'>
-            <label htmlFor='startDate'>Start Date: </label>
+          <div className="position">
+            <label htmlFor="position">Position: </label>
             <input
-              type='date'
-              name='startDate'
-              value={experienceInputValue.startDate}
-              onChange={(e) => setExperienceInputValue({ ...experienceInputValue, startDate: e.target.value})}
+              type="text"
+              name="position"
+              value={position}
+              onChange={handleExperienceChange}
             />
-            <label htmlFor='endDate'>End Date: </label>
+          </div>
+
+
+          <div className="dates">
+            <label htmlFor="startDate">Start Date: </label>
             <input
-              type='date'
-              name='endDate'
-              value={experienceInputValue.endDate}
-              onChange={(e) => setExperienceInputValue({ ...experienceInputValue, endDate: e.target.value})}
+              type="date"
+              name="startDate"
+              value={startDate}
+              onChange={handleExperienceChange}
+            />
+            <label htmlFor="endDate">End Date: </label>
+            <input
+              type="date"
+              name="endDate"
+              value={endDate}
+              onChange={handleExperienceChange}
             />
           </div>
 
       </form>
 
-      <div className='experience-buttons'>
-        <button type='button'>Add</button>
-        <button type='submit'>Save</button>
+      <div className="experience-buttons">
+        <button type="button">Add</button>
+        <button type="submit">Save</button>
       </div>
     </div>
   )
@@ -85,7 +77,14 @@ function Experience({ isActive }) {
 }
 
 Experience.propTypes = {
-  isActive: PropType.bool,
+  isActive: PropTypes.bool,
+  handleExperienceChange: PropTypes.func,
+  company: PropTypes.string,
+  companyCity: PropTypes.string,
+  companyState: PropTypes.string,
+  position: PropTypes.string,
+  startDate: PropTypes.string,
+  endDate: PropTypes.string
 }
 
 export default Experience;
