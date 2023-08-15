@@ -1,20 +1,21 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import InfoCard from './InfoCard.jsx';
+import Education from './EducationCard.jsx';
+import Experience from './ExperienceCard.jsx';
 import infoIconLight from '../assets/info-icon-light.png';
 import schoolIconLight from '../assets/school-icon-light.png';
 import workIconLight from '../assets/work-history-icon-light.png';
 import '../styles/InputSection.css';
-import Education from './EducationCard.jsx';
-import Experience from './ExperienceCard.jsx';
 
 function InputSection({
   handleInfoChange,
   handleEducationChange,
   handleExperienceChange,
+  clearButtonHandle
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
-
+  
   return (
     <section className="input-section">
       <nav id="input-nav">
@@ -42,6 +43,7 @@ function InputSection({
         <InfoCard
           isActive={activeIndex === 0}
           handleInfoChange={handleInfoChange}
+          clearButtonHandle={clearButtonHandle}
         />
         <Education
           isActive={activeIndex === 1}
@@ -78,6 +80,7 @@ InputSection.propTypes = {
   handleInfoChange: PropTypes.func,
   handleEducationChange: PropTypes.func,
   handleExperienceChange: PropTypes.func,
+  clearButtonHandle: PropTypes.func
 };
 
 export default InputSection;

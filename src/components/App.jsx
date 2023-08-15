@@ -56,6 +56,17 @@ function App() {
     });
   }
 
+  function clearButtonHandle() {
+    document.getElementById('info-form').reset();
+    setInfoInputValue({
+      firstName: '',
+      lastName: '',
+      title: '',
+      email: '',
+      phone: '',
+    });
+  }
+
   return (
     <>
       <Header />
@@ -64,6 +75,7 @@ function App() {
           handleInfoChange={handleInfoCardChange}
           handleEducationChange={handleEducationCardChange}
           handleExperienceChange={handleExperienceCardChange}
+          clearButtonHandle={clearButtonHandle}
         />
         <DisplayArea
           infoInputValue={infoInputValue}

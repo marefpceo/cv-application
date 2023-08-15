@@ -4,16 +4,32 @@ import '../styles/InfoCard.css';
 function InfoCard({
   isActive,
   handleInfoChange,
+  clearButtonHandle,
   firstName,
   lastName,
   title,
   email,
   phone,
 }) {
+
+  const formInputs = document.querySelectorAll('form input');
+
+  function saveButtonHandle() {
+    formInputs.forEach(input => input.disabled = 'true');
+    document.getElementById('info-clear-btn').disabled = 'true';
+    document.getElementById('info-save-btn').disabled = 'true';
+  }
+
+  function editButtonHandle() {
+    formInputs.forEach(input => input.disabled = '');
+    document.getElementById('info-clear-btn').disabled = '';
+    document.getElementById('info-save-btn').disabled = '';
+  }
+
   return (
     <div id="info-card" style={{ display: isActive ? 'flex' : 'none' }}>
       <h2>Information</h2>
-      <form className="info-form">
+      <form id='info-form' className="info-form">
         <label htmlFor="firstName">First Name: </label>
         <input
           type="text"
@@ -51,9 +67,9 @@ function InfoCard({
         />
       </form>
       <div className="info-buttons">
-        <button type="button">Edit</button>
-        <button type="submit">Save</button>
-        <button type="reset">Clear</button>
+        <button type="button" onClick={editButtonHandle} id='info-edit-btn' >Edit</button>
+        <button type="submit" onClick={saveButtonHandle} id='info-save-btn' >Save</button>
+        <button type="reset" onClick={clearButtonHandle} id='info-clear-btn' >Clear</button>
       </div>
     </div>
   );
@@ -62,6 +78,7 @@ function InfoCard({
 InfoCard.propTypes = {
   isActive: PropTypes.bool,
   handleInfoChange: PropTypes.func,
+  clearButtonHandle: PropTypes.func,
   firstName: PropTypes.string,
   lastName: PropTypes.string,
   title: PropTypes.string,
