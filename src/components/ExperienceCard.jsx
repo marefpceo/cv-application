@@ -18,7 +18,6 @@ function Experience({ isActive, handleExperienceChange, company, companyCity, co
               />
             </div>
           
-
           <div className="location">
             <label htmlFor="companyCity">City: </label>
             <input
@@ -73,7 +72,6 @@ function Experience({ isActive, handleExperienceChange, company, companyCity, co
       </div>
     </div>
   )
-
 }
 
 Experience.propTypes = {

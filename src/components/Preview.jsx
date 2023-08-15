@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import profileImage from '../assets/blank-profile-circle.png';
-import '../styles/Preview.css';
+import '../styles/DisplayArea.css';
 
 function Preview({ firstName, lastName, title, email, phone, school, fieldOfStudy, graduationDate, 
   schoolCity, schoolState, schoolCountry, company, companyCity, companyState, position, startDate, 
@@ -30,26 +30,31 @@ function Preview({ firstName, lastName, title, email, phone, school, fieldOfStud
             <li> <span className='preview-labels'>Phone: </span> {phone} </li>
           </ul>
         </div>
-      </aside>
 
-      <section className='preview-body'>
-      <h3>Education</h3>
+        <h3>Education</h3>
         <hr/>
         
         <p>{school} <br/> {fieldOfStudy} <br/> {graduationDate} <br/> {schoolCity} <br/> {schoolState} <br/> {schoolCountry} </p>
+      </aside>
+
+      <section className='preview-body'>
+      <h3>Experience</h3>
+        <div className='experience-div'>
+          <div className='dates'>
+            {startDate}-{endDate}
+          </div>
+          <div className='company'>
+            <h4>{company}</h4>
+            <p>{position}</p>
+          </div>
+
+          <div className='company-location'>
+            {companyCity}
+            {companyState}
+          </div>
+          
+        </div>
       </section>
-
-    
-        <h3>Experience</h3>
-        <p>
-          {company}
-          {companyCity}
-          {companyState}
-          {position}
-          {startDate}
-          {endDate}
-        </p>
-
 
     </div>);
 }
