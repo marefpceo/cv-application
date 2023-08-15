@@ -1,9 +1,16 @@
 import PropTypes from 'prop-types';
 import '../styles/EducationCard.css';
 
-function Education({ isActive, handleEducationChange, school, fieldOfStudy, graduationDate, 
-  schoolCity, schoolState, schoolCountry }) {
-
+function Education({
+  isActive,
+  handleEducationChange,
+  school,
+  fieldOfStudy,
+  graduationDate,
+  schoolCity,
+  schoolState,
+  schoolCountry,
+}) {
   return (
     <div id="education-card" style={{ display: isActive ? 'flex' : 'none' }}>
       <h2>Education</h2>
@@ -73,7 +80,7 @@ Education.propTypes = {
   graduationDate: PropTypes.string,
   schoolCity: PropTypes.string,
   schoolState: PropTypes.string,
-  schoolCountry: PropTypes.string
+  schoolCountry: PropTypes.string,
 };
 
 export default Education;

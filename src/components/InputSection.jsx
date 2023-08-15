@@ -8,7 +8,11 @@ import '../styles/InputSection.css';
 import Education from './EducationCard.jsx';
 import Experience from './ExperienceCard.jsx';
 
-function InputSection({ handleInfoChange, handleEducationChange, handleExperienceChange }) {
+function InputSection({
+  handleInfoChange,
+  handleEducationChange,
+  handleExperienceChange,
+}) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
@@ -35,17 +39,17 @@ function InputSection({ handleInfoChange, handleEducationChange, handleExperienc
       </nav>
 
       <div className="cards">
-        <InfoCard 
-          isActive={activeIndex === 0} 
+        <InfoCard
+          isActive={activeIndex === 0}
           handleInfoChange={handleInfoChange}
         />
-        <Education 
-          isActive={activeIndex === 1} 
+        <Education
+          isActive={activeIndex === 1}
           handleEducationChange={handleEducationChange}
         />
-        <Experience 
-          isActive={activeIndex === 2} 
-          handleExperienceChange={handleExperienceChange} 
+        <Experience
+          isActive={activeIndex === 2}
+          handleExperienceChange={handleExperienceChange}
         />
       </div>
     </section>
@@ -67,13 +71,13 @@ InputNavButtons.propTypes = {
   icon: PropTypes.string,
   alt: PropTypes.string.isRequired,
   isActive: PropTypes.bool,
-  onShow: PropTypes.func
+  onShow: PropTypes.func,
 };
 
 InputSection.propTypes = {
   handleInfoChange: PropTypes.func,
   handleEducationChange: PropTypes.func,
-  handleExperienceChange: PropTypes.func
-}
+  handleExperienceChange: PropTypes.func,
+};
 
 export default InputSection;

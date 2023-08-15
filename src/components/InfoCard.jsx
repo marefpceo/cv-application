@@ -1,8 +1,15 @@
 import PropTypes from 'prop-types';
 import '../styles/InfoCard.css';
 
-function InfoCard({ isActive, handleInfoChange, firstName, lastName, title, email, phone  }) {
-
+function InfoCard({
+  isActive,
+  handleInfoChange,
+  firstName,
+  lastName,
+  title,
+  email,
+  phone,
+}) {
   return (
     <div id="info-card" style={{ display: isActive ? 'flex' : 'none' }}>
       <h2>Information</h2>
@@ -59,7 +66,7 @@ InfoCard.propTypes = {
   lastName: PropTypes.string,
   title: PropTypes.string,
   email: PropTypes.string,
-  phone: PropTypes.string
+  phone: PropTypes.string,
 };
 
 export default InfoCard;

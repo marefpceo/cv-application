@@ -36,38 +36,41 @@ function App() {
     const value = e.target.value;
     setInfoInputValue({
       ...infoInputValue,
-      [e.target.name]: value});
+      [e.target.name]: value,
+    });
   }
 
   function handleEducationCardChange(e) {
     const value = e.target.value;
     setEducationInputValue({
       ...educationInputValue,
-      [e.target.name]: value});
+      [e.target.name]: value,
+    });
   }
 
   function handleExperienceCardChange(e) {
     const value = e.target.value;
     setExperienceInputValue({
       ...experienceInputValue,
-      [e.target.name]: value});
+      [e.target.name]: value,
+    });
   }
 
   return (
     <>
       <Header />
-        <div className="main-area">
-          <InputSection  
-            handleInfoChange={handleInfoCardChange} 
-            handleEducationChange={handleEducationCardChange}
-            handleExperienceChange={handleExperienceCardChange}
-          />
-          <DisplayArea 
-            infoInputValue={infoInputValue} 
-            educationInputValue={educationInputValue} 
-            experienceInputValue={experienceInputValue}  
-          />
-        </div>
+      <div className="main-area">
+        <InputSection
+          handleInfoChange={handleInfoCardChange}
+          handleEducationChange={handleEducationCardChange}
+          handleExperienceChange={handleExperienceCardChange}
+        />
+        <DisplayArea
+          infoInputValue={infoInputValue}
+          educationInputValue={educationInputValue}
+          experienceInputValue={experienceInputValue}
+        />
+      </div>
       <Footer />
     </>
   );
