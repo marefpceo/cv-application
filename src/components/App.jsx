@@ -4,6 +4,7 @@ import InputSection from './InputSection.jsx';
 import DisplayArea from './DisplayArea.jsx';
 import '../styles/App.css';
 import Footer from './Footer.jsx';
+import uniqid from 'uniqid';
 
 function App() {
   const [infoInputValue, setInfoInputValue] = useState({
@@ -14,7 +15,10 @@ function App() {
     phone: '',
   });
 
+  const initialValue = uniqid();
+
   const [educationInputValue, setEducationInputValue] = useState({
+    id: initialValue,
     school: '',
     fieldOfStudy: '',
     graduationDate: '',
@@ -24,6 +28,7 @@ function App() {
   });
 
   const [experienceInputValue, setExperienceInputValue] = useState({
+    id: initialValue,
     company: '',
     companyCity: '',
     companyState: '',
@@ -31,6 +36,8 @@ function App() {
     startDate: '',
     endDate: '',
   });
+
+  const [educationList] = useState([]);
 
   function handleInfoCardChange(e) {
     const value = e.target.value;
@@ -67,6 +74,14 @@ function App() {
     });
   }
 
+  function educationAddHandle() {
+    setEducationInputValue({
+      id: uniqid(''),
+    });
+    educationList.push(educationInputValue);
+    console.log(educationList);
+  }
+
   return (
     <>
       <Header />
@@ -76,6 +91,7 @@ function App() {
           handleEducationChange={handleEducationCardChange}
           handleExperienceChange={handleExperienceCardChange}
           clearButtonHandle={clearButtonHandle}
+          educationAddHandle={educationAddHandle}
         />
         <DisplayArea
           infoInputValue={infoInputValue}

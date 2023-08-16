@@ -14,7 +14,8 @@ function InfoCard({
 
   const formInputs = document.querySelectorAll('form input');
 
-  function saveButtonHandle() {
+  function saveButtonHandle(e) {
+    e.preventDefault();
     formInputs.forEach(input => input.disabled = 'true');
     document.getElementById('info-clear-btn').disabled = 'true';
     document.getElementById('info-save-btn').disabled = 'true';

@@ -4,6 +4,7 @@ import '../styles/EducationCard.css';
 function Education({
   isActive,
   handleEducationChange,
+  educationAddHandle,
   school,
   fieldOfStudy,
   graduationDate,
@@ -65,7 +66,7 @@ function Education({
       </form>
 
       <div className="education-buttons">
-        <button type="button">Add</button>
+        <button type="button" id='education-add' onClick={educationAddHandle}>Add</button>
         <button type="submit">Save</button>
       </div>
     </div>
@@ -75,6 +76,7 @@ function Education({
 Education.propTypes = {
   isActive: PropTypes.bool,
   handleEducationChange: PropTypes.func,
+  educationAddHandle: PropTypes.func,
   school: PropTypes.string,
   fieldOfStudy: PropTypes.string,
   graduationDate: PropTypes.string,
