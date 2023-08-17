@@ -12,7 +12,7 @@ function InfoCard({
   phone,
 }) {
 
-  const formInputs = document.querySelectorAll('form input');
+  const formInputs = document.querySelectorAll('#info-form input');
 
   function saveButtonHandle(e) {
     e.preventDefault();

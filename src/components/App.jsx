@@ -7,6 +7,10 @@ import Footer from './Footer.jsx';
 import uniqid from 'uniqid';
 
 function App() {
+
+  const [educationList] = useState([]);
+  const initialValue = uniqid();
+
   const [infoInputValue, setInfoInputValue] = useState({
     firstName: '',
     lastName: '',
@@ -14,8 +18,6 @@ function App() {
     email: '',
     phone: '',
   });
-
-  const initialValue = uniqid();
 
   const [educationInputValue, setEducationInputValue] = useState({
     id: initialValue,
@@ -36,8 +38,6 @@ function App() {
     startDate: '',
     endDate: '',
   });
-
-  const [educationList] = useState([]);
 
   function handleInfoCardChange(e) {
     const value = e.target.value;
@@ -92,6 +92,7 @@ function App() {
           handleExperienceChange={handleExperienceCardChange}
           clearButtonHandle={clearButtonHandle}
           educationAddHandle={educationAddHandle}
+          list={educationList}
         />
         <DisplayArea
           infoInputValue={infoInputValue}
