@@ -83,7 +83,7 @@ function Education({
             </div>
             <div className='edit' id={item.id}>
               <img src={editIcon} alt='Edit entry' className='list-icons'/>
-              <img src={deleteIcon} alt='Delete entry' className='list-icons' onClick={(e) => deleteEntry(e.target.parentNode.id)}/>
+              <img src={deleteIcon} alt='Delete entry' className='list-icons' onClick={(e) => deleteEntry('edu',(e.target.parentNode.id))}/>
             </div>
           </div>
         ))}

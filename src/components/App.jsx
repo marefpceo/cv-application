@@ -80,14 +80,18 @@ function App() {
     });
 
     setEducationList([
-      ...educationList.concat(educationInputValue)
+      ...educationList,
+      { ...educationInputValue }
     ]);
     document.getElementById('education-form').reset();
   }
 
-  function deleteEntry(entryId) {
-    const entryIndex = educationList.filter(entry => entry.id !== entryId);
-    setEducationList(entryIndex);
+  function deleteEntry(fieldType, entryId) {
+    if (fieldType === 'edu') {
+      setEducationList(
+        educationList.filter(entry => entry.id !== entryId)
+      );
+    }
   }
 
   return (
@@ -107,6 +111,7 @@ function App() {
           infoInputValue={infoInputValue}
           educationInputValue={educationInputValue}
           experienceInputValue={experienceInputValue}
+          educationList={educationList}
         />
       </div>
       <Footer />

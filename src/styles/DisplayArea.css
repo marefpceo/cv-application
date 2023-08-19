@@ -108,7 +108,17 @@
   padding: 5%;
 }
 
-.school-info div {
+.preview-edu {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: start;
+}
+
+.preview-edu p {
+  margin: 0;
+}
+/* .school-info div {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -125,7 +135,7 @@
 
 .school-info div p:nth-child(2) {
   font-style: italic;
-}
+} */
 
 .preview-body {
   color: var(--text-dark);

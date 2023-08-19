@@ -8,18 +8,19 @@ function Preview({
   title,
   email,
   phone,
-  school,
-  fieldOfStudy,
-  graduationDate,
-  schoolCity,
-  schoolState,
-  schoolCountry,
+  // school,
+  // fieldOfStudy,
+  // graduationDate,
+  // schoolCity,
+  // schoolState,
+  // schoolCountry,
   company,
   companyCity,
   companyState,
   position,
   startDate,
   endDate,
+  educationList
 }) {
   const name = firstName + ' ' + lastName;
 
@@ -56,14 +57,19 @@ function Preview({
           <hr />
 
           <div className="school-info">
-            <p>{graduationDate} </p>
-            <div>
-              <p>{school}</p>
-              <p>{fieldOfStudy}</p>
-              <p>
-                {schoolCity}, {schoolState} {schoolCountry}
-              </p>
-            </div>
+            {educationList && educationList.map((eduItem) => (
+              <div className='preview-edu' key={eduItem.id}>
+              <p>{eduItem.graduationDate} </p>
+                <div>
+                  <p>{eduItem.school}</p>
+                  <p>{eduItem.fieldOfStudy}</p>
+                  <p>
+                    {eduItem.schoolCity}, {eduItem.schoolState} {eduItem.schoolCountry}
+                  </p>
+                </div>
+              </div>
+            ))}
+            
           </div>
         </div>
       </aside>
@@ -109,5 +115,6 @@ Preview.propTypes = {
   position: PropTypes.string,
   startDate: PropTypes.string,
   endDate: PropTypes.string,
+  educationList: PropTypes.array
 };
 export default Preview;
