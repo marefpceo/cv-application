@@ -8,7 +8,7 @@ import uniqid from 'uniqid';
 
 function App() {
 
-  const [educationList] = useState([]);
+  const [educationList, setEducationList] = useState([]);
   const initialValue = uniqid();
 
   const [infoInputValue, setInfoInputValue] = useState({
@@ -78,8 +78,16 @@ function App() {
     setEducationInputValue({
       id: uniqid(''),
     });
-    educationList.push(educationInputValue);
-    console.log(educationList);
+
+    setEducationList([
+      ...educationList.concat(educationInputValue)
+    ]);
+    document.getElementById('education-form').reset();
+  }
+
+  function deleteEntry(entryId) {
+    const entryIndex = educationList.filter(entry => entry.id !== entryId);
+    setEducationList(entryIndex);
   }
 
   return (
@@ -93,6 +101,7 @@ function App() {
           clearButtonHandle={clearButtonHandle}
           educationAddHandle={educationAddHandle}
           list={educationList}
+          deleteEntry={deleteEntry}
         />
         <DisplayArea
           infoInputValue={infoInputValue}

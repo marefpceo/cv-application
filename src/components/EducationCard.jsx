@@ -13,7 +13,8 @@ function Education({
   schoolCity,
   schoolState,
   schoolCountry,
-  list
+  list,
+  deleteEntry
 }) {
   return (
     <div id="education-card" style={{ display: isActive ? 'flex' : 'none' }}>
@@ -80,9 +81,9 @@ function Education({
               <div>{item.school}</div>
               <div>{item.graduationDate}</div>
             </div>
-            <div className='edit'>
+            <div className='edit' id={item.id}>
               <img src={editIcon} alt='Edit entry' className='list-icons'/>
-              <img src={deleteIcon} alt='Delete entry' className='list-icons'/>
+              <img src={deleteIcon} alt='Delete entry' className='list-icons' onClick={(e) => deleteEntry(e.target.parentNode.id)}/>
             </div>
           </div>
         ))}
@@ -95,6 +96,7 @@ Education.propTypes = {
   isActive: PropTypes.bool,
   handleEducationChange: PropTypes.func,
   educationAddHandle: PropTypes.func,
+  deleteEntry: PropTypes.func,
   school: PropTypes.string,
   fieldOfStudy: PropTypes.string,
   graduationDate: PropTypes.string,
