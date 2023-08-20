@@ -13,7 +13,7 @@ function Education({
   schoolCity,
   schoolState,
   schoolCountry,
-  list,
+  educationList,
   deleteEntry
 }) {
   return (
@@ -75,7 +75,7 @@ function Education({
       </div>
 
       <div className='school-list'>
-        {list.map((item) => (
+        {educationList.map((item) => (
           <div className='list-item' key={item.id}>
             <div className='list-title'>
               <div>{item.school}</div>
@@ -103,7 +103,7 @@ Education.propTypes = {
   schoolCity: PropTypes.string,
   schoolState: PropTypes.string,
   schoolCountry: PropTypes.string,
-  list: PropTypes.array
+  educationList: PropTypes.array
 };
 
 export default Education;

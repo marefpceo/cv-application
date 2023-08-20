@@ -9,6 +9,7 @@ import uniqid from 'uniqid';
 function App() {
 
   const [educationList, setEducationList] = useState([]);
+  const [experienceList, setExperienceList] = useState([]);
   const initialValue = uniqid();
 
   const [infoInputValue, setInfoInputValue] = useState({
@@ -86,10 +87,26 @@ function App() {
     document.getElementById('education-form').reset();
   }
 
+  function experienceAddHandle() {
+    setExperienceInputValue({
+      id: uniqid('')
+    });
+
+    setExperienceList([
+      ...experienceList,
+      { ...experienceInputValue }
+    ]);
+    document.getElementById('experience-form').reset();
+  }
+
   function deleteEntry(fieldType, entryId) {
     if (fieldType === 'edu') {
       setEducationList(
         educationList.filter(entry => entry.id !== entryId)
+      );
+    } else if (fieldType === 'exp') {
+      setExperienceList(
+        experienceList.filter(entry => entry.id !== entryId)
       );
     }
   }
@@ -104,13 +121,15 @@ function App() {
           handleExperienceChange={handleExperienceCardChange}
           clearButtonHandle={clearButtonHandle}
           educationAddHandle={educationAddHandle}
-          list={educationList}
+          experienceAddHandle={experienceAddHandle}
+          educationList={educationList}
+          experienceList={experienceList}
           deleteEntry={deleteEntry}
         />
         <DisplayArea
           infoInputValue={infoInputValue}
-          experienceInputValue={experienceInputValue}
           educationList={educationList}
+          experienceList={experienceList}
         />
       </div>
       <Footer />

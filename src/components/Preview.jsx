@@ -8,12 +8,7 @@ function Preview({
   title,
   email,
   phone,
-  company,
-  companyCity,
-  companyState,
-  position,
-  startDate,
-  endDate,
+  experienceList,
   educationList
 }) {
   const name = firstName + ' ' + lastName;
@@ -73,16 +68,16 @@ function Preview({
         <hr />
         <div className="experience-div">
           <div className="experience-dates">
-            {startDate}-{endDate}
+            {experienceList.startDate}-{experienceList.endDate}
           </div>
           <div className="company-info">
             <div className="company">
-              <h4>{company}</h4>
-              <p>{position}</p>
+              <h4>{experienceList.company}</h4>
+              <p>{experienceList.position}</p>
             </div>
             <div className="company-location">
-              <p>{companyCity}</p>
-              <p>{companyState}</p>
+              <p>{experienceList.companyCity}</p>
+              <p>{experienceList.companyState}</p>
             </div>
           </div>
         </div>
@@ -97,12 +92,7 @@ Preview.propTypes = {
   title: PropTypes.string,
   email: PropTypes.string,
   phone: PropTypes.string,
-  company: PropTypes.string,
-  companyCity: PropTypes.string,
-  companyState: PropTypes.string,
-  position: PropTypes.string,
-  startDate: PropTypes.string,
-  endDate: PropTypes.string,
-  educationList: PropTypes.array
+  educationList: PropTypes.array,
+  experienceList: PropTypes.array
 };
 export default Preview;

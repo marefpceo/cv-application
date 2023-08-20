@@ -4,14 +4,14 @@ import '../styles/DisplayArea.css';
 
 function DisplayArea({
   infoInputValue,
-  experienceInputValue,
+  experienceList,
   educationList
 }) {
   return (
     <div className="display-area">
       <Preview
         {...infoInputValue}
-        {...experienceInputValue}
+        experienceList={experienceList}
         educationList={educationList}
       />
     </div>
@@ -20,7 +20,7 @@ function DisplayArea({
 
 DisplayArea.propTypes = {
   infoInputValue: PropTypes.object,
-  experienceInputValue: PropTypes.object,
+  experienceList: PropTypes.array,
   educationList: PropTypes.array
 };
 
