@@ -109,7 +109,6 @@ function App() {
         />
         <DisplayArea
           infoInputValue={infoInputValue}
-          educationInputValue={educationInputValue}
           experienceInputValue={experienceInputValue}
           educationList={educationList}
         />

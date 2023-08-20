@@ -4,7 +4,6 @@ import '../styles/DisplayArea.css';
 
 function DisplayArea({
   infoInputValue,
-  // educationInputValue,
   experienceInputValue,
   educationList
 }) {
@@ -12,9 +11,8 @@ function DisplayArea({
     <div className="display-area">
       <Preview
         {...infoInputValue}
-        // {...educationInputValue}
         {...experienceInputValue}
-        {...educationList}
+        educationList={educationList}
       />
     </div>
   );
@@ -22,7 +20,6 @@ function DisplayArea({
 
 DisplayArea.propTypes = {
   infoInputValue: PropTypes.object,
-  educationInputValue: PropTypes.object,
   experienceInputValue: PropTypes.object,
   educationList: PropTypes.array
 };
