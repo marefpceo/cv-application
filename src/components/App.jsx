@@ -8,9 +8,28 @@ import uniqid from 'uniqid';
 
 function App() {
 
+  const educationInitialState = {
+    id: '',
+    school: '',
+    fieldOfStudy: '',
+    graduationDate: '',
+    schoolCity: '',
+    schoolState: '',
+    schoolCountry: ''
+  }
+
+  const experienceInitialState = {
+    id: '',
+    company: '',
+    companyCity: '',
+    companyState: '',
+    position: '',
+    startDate: '',
+    endDate: ''
+  }
+
   const [educationList, setEducationList] = useState([]);
   const [experienceList, setExperienceList] = useState([]);
-  const initialValue = uniqid();
 
   const [infoInputValue, setInfoInputValue] = useState({
     firstName: '',
@@ -21,7 +40,7 @@ function App() {
   });
 
   const [educationInputValue, setEducationInputValue] = useState({
-    id: initialValue,
+    id: '',
     school: '',
     fieldOfStudy: '',
     graduationDate: '',
@@ -31,7 +50,7 @@ function App() {
   });
 
   const [experienceInputValue, setExperienceInputValue] = useState({
-    id: initialValue,
+    id: '',
     company: '',
     companyCity: '',
     companyState: '',
@@ -76,9 +95,11 @@ function App() {
   }
 
   function educationAddHandle() {
-    setEducationInputValue({
-      id: uniqid(''),
-    });
+    if (educationInputValue.id === '') {
+      setEducationInputValue({
+        id: uniqid(''),
+      });
+    }    
 
     setEducationList([
       ...educationList,
@@ -88,9 +109,11 @@ function App() {
   }
 
   function experienceAddHandle() {
-    setExperienceInputValue({
-      id: uniqid('')
-    });
+    if (experienceInputValue.id === '') {
+      setExperienceInputValue({
+        id: uniqid('')
+      });
+    }
 
     setExperienceList([
       ...experienceList,
@@ -125,6 +148,7 @@ function App() {
           educationList={educationList}
           experienceList={experienceList}
           deleteEntry={deleteEntry}
+          educationInputValue={educationInputValue}
         />
         <DisplayArea
           infoInputValue={infoInputValue}

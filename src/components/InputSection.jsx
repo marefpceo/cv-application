@@ -17,7 +17,8 @@ function InputSection({
   educationList,
   experienceAddHandle,
   experienceList,
-  deleteEntry
+  deleteEntry,
+  educationInputValue
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
   
@@ -56,6 +57,7 @@ function InputSection({
           educationAddHandle={educationAddHandle}
           educationList={educationList}
           deleteEntry={deleteEntry}
+          educationInputValue={educationInputValue}
         />
         <Experience
           isActive={activeIndex === 2}
@@ -96,7 +98,8 @@ InputSection.propTypes = {
   experienceAddHandle: PropTypes.func,
   clearButtonHandle: PropTypes.func,
   educationList: PropTypes.array,
-  experienceList: PropTypes.array
+  experienceList: PropTypes.array,
+  educationInputValue: PropTypes.object
 };
 
 export default InputSection;
