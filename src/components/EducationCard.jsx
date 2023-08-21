@@ -7,12 +7,6 @@ function Education({
   isActive,
   handleEducationChange,
   educationAddHandle,
-  // school,
-  // fieldOfStudy,
-  // graduationDate,
-  // schoolCity,
-  // schoolState,
-  // schoolCountry,
   educationList,
   deleteEntry,
   educationInputValue
@@ -98,12 +92,6 @@ Education.propTypes = {
   handleEducationChange: PropTypes.func,
   educationAddHandle: PropTypes.func,
   deleteEntry: PropTypes.func,
-  school: PropTypes.string,
-  fieldOfStudy: PropTypes.string,
-  graduationDate: PropTypes.string,
-  schoolCity: PropTypes.string,
-  schoolState: PropTypes.string,
-  schoolCountry: PropTypes.string,
   educationList: PropTypes.array,
   educationInputValue: PropTypes.object
 };

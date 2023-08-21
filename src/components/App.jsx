@@ -7,9 +7,16 @@ import Footer from './Footer.jsx';
 import uniqid from 'uniqid';
 
 function App() {
+  const infoInitialState = {
+    firstName: '',
+    lastName: '',
+    title: '',
+    email: '',
+    phone: '',
+  }
 
   const educationInitialState = {
-    id: '',
+    id: uniqid(),
     school: '',
     fieldOfStudy: '',
     graduationDate: '',
@@ -19,7 +26,7 @@ function App() {
   }
 
   const experienceInitialState = {
-    id: '',
+    id: uniqid(),
     company: '',
     companyCity: '',
     companyState: '',
@@ -28,36 +35,11 @@ function App() {
     endDate: ''
   }
 
+  const [infoInputValue, setInfoInputValue] = useState(infoInitialState);
+  const [educationInputValue, setEducationInputValue] = useState(educationInitialState);
+  const [experienceInputValue, setExperienceInputValue] = useState(experienceInitialState);
   const [educationList, setEducationList] = useState([]);
   const [experienceList, setExperienceList] = useState([]);
-
-  const [infoInputValue, setInfoInputValue] = useState({
-    firstName: '',
-    lastName: '',
-    title: '',
-    email: '',
-    phone: '',
-  });
-
-  const [educationInputValue, setEducationInputValue] = useState({
-    id: '',
-    school: '',
-    fieldOfStudy: '',
-    graduationDate: '',
-    schoolCity: '',
-    schoolState: '',
-    schoolCountry: '',
-  });
-
-  const [experienceInputValue, setExperienceInputValue] = useState({
-    id: '',
-    company: '',
-    companyCity: '',
-    companyState: '',
-    position: '',
-    startDate: '',
-    endDate: '',
-  });
 
   function handleInfoCardChange(e) {
     const value = e.target.value;
@@ -105,7 +87,8 @@ function App() {
       ...educationList,
       { ...educationInputValue }
     ]);
-    document.getElementById('education-form').reset();
+
+    setEducationInputValue(educationInitialState);
   }
 
   function experienceAddHandle() {
@@ -119,7 +102,8 @@ function App() {
       ...experienceList,
       { ...experienceInputValue }
     ]);
-    document.getElementById('experience-form').reset();
+
+    setExperienceInputValue(experienceInitialState);
   }
 
   function deleteEntry(fieldType, entryId) {
@@ -147,8 +131,9 @@ function App() {
           experienceAddHandle={experienceAddHandle}
           educationList={educationList}
           experienceList={experienceList}
-          deleteEntry={deleteEntry}
           educationInputValue={educationInputValue}
+          experienceInputValue={experienceInputValue}
+          deleteEntry={deleteEntry}          
         />
         <DisplayArea
           infoInputValue={infoInputValue}

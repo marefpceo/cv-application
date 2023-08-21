@@ -6,14 +6,9 @@ import editIcon from '../assets/pencil.png';
 function Experience({
   isActive,
   handleExperienceChange,
-  company,
-  companyCity,
-  companyState,
-  position,
-  startDate,
-  endDate,
   experienceList,
   experienceAddHandle,
+  experienceInputValue,
   deleteEntry
 }) {
   return (
@@ -25,7 +20,7 @@ function Experience({
           <input
             type="text"
             name="company"
-            value={company}
+            value={experienceInputValue.company}
             onChange={handleExperienceChange}
           />
         </div>
@@ -35,14 +30,14 @@ function Experience({
           <input
             type="text"
             name="companyCity"
-            value={companyCity}
+            value={experienceInputValue.companyCity}
             onChange={handleExperienceChange}
           />
           <label htmlFor="companyState">State: </label>
           <input
             type="text"
             name="companyState"
-            value={companyState}
+            value={experienceInputValue.companyState}
             onChange={handleExperienceChange}
           />
         </div>
@@ -52,7 +47,7 @@ function Experience({
           <input
             type="text"
             name="position"
-            value={position}
+            value={experienceInputValue.position}
             onChange={handleExperienceChange}
           />
         </div>
@@ -62,14 +57,14 @@ function Experience({
           <input
             type="date"
             name="startDate"
-            value={startDate}
+            value={experienceInputValue.startDate}
             onChange={handleExperienceChange}
           />
           <label htmlFor="endDate">End Date: </label>
           <input
             type="date"
             name="endDate"
-            value={endDate}
+            value={experienceInputValue.endDate}
             onChange={handleExperienceChange}
           />
         </div>
@@ -109,7 +104,8 @@ Experience.propTypes = {
   position: PropTypes.string,
   startDate: PropTypes.string,
   endDate: PropTypes.string,
-  experienceList: PropTypes.array
+  experienceList: PropTypes.array,
+  experienceInputValue: PropTypes.object
 };
 
 export default Experience;

@@ -102,7 +102,7 @@
 
 .school-info {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 5%;
   font-size: 0.8vw;
   padding: 5%;
@@ -118,26 +118,8 @@
 .preview-edu p {
   margin: 0;
 }
-/* .school-info div {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  text-align: start;
-}
 
-.school-info p {
-  margin: 0;
-}
-
-.school-info div p:first-child {
-  font-weight: bold;
-}
-
-.school-info div p:nth-child(2) {
-  font-style: italic;
-} */
-
-.preview-body {
+.preview-experience {
   color: var(--text-dark);
   background-color: white;
   width: 60%;
@@ -155,24 +137,4 @@
   padding: 0 5%;
 }
 
-.experience-dates {
-  max-width: 30%;
-}
 
-.company-info,
-.company {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-}
-
-.company-location {
-  display: flex;
-  justify-content: space-between;
-}
-
-.company h4,
-.company p,
-.company-location p {
-  margin: 0;
-}

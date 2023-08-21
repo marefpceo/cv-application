@@ -63,23 +63,28 @@ function Preview({
         </div>
       </aside>
 
-      <section className="preview-body">
+      <section className="preview-experience">
         <h3>Experience</h3>
         <hr />
+        
         <div className="experience-div">
-          <div className="experience-dates">
-            {experienceList.startDate}-{experienceList.endDate}
-          </div>
-          <div className="company-info">
-            <div className="company">
-              <h4>{experienceList.company}</h4>
-              <p>{experienceList.position}</p>
+        {experienceList && experienceList.map((expItem) => (
+          <div className='preview-exp' key={expItem.id}>
+            <div className='experience-dates'>
+              {expItem.startDate} - {expItem.endDate}
             </div>
-            <div className="company-location">
-              <p>{experienceList.companyCity}</p>
-              <p>{experienceList.companyState}</p>
+            <div className='company'>
+              <div className='company-info'>
+                <h4>{expItem.company}</h4>
+                <p>{expItem.position}</p>
+              </div>
+            </div>
+            <div className='company-location'>
+              <p> {expItem.companyCity} </p>
+              <p> {expItem.companyState} </p>
             </div>
           </div>
+        ))}
         </div>
       </section>
     </div>
