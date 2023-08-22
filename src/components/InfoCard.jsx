@@ -28,49 +28,49 @@ function InfoCard({
   }
 
   return (
-    <div id="info-card" style={{ display: isActive ? 'flex' : 'none' }}>
+    <div id='info-card' style={{ display: isActive ? 'flex' : 'none' }}>
       <h2>Information</h2>
-      <form id='info-form' className="info-form">
-        <label htmlFor="firstName">First Name: </label>
+      <form id='info-form' className='info-form'>
+        <label htmlFor='firstName'>First Name: </label>
         <input
-          type="text"
-          name="firstName"
+          type='text'
+          name='firstName'
           value={firstName}
           onChange={handleInfoChange}
         />
-        <label htmlFor="lastName">Last Name: </label>
+        <label htmlFor='lastName'>Last Name: </label>
         <input
-          type="text"
-          name="lastName"
+          type='text'
+          name='lastName'
           value={lastName}
           onChange={handleInfoChange}
         />
-        <label htmlFor="title">Title: </label>
+        <label htmlFor='title'>Title: </label>
         <input
-          type="text"
-          name="title"
+          type='text'
+          name='title'
           value={title}
           onChange={handleInfoChange}
         />
-        <label htmlFor="email">Email: </label>
+        <label htmlFor='email'>Email: </label>
         <input
-          type="email"
-          name="email"
+          type='email'
+          name='email'
           value={email}
           onChange={handleInfoChange}
         />
-        <label htmlFor="phone">Phone: </label>
+        <label htmlFor='phone'>Phone: </label>
         <input
-          type="tel"
-          name="phone"
+          type='tel'
+          name='phone'
           value={phone}
           onChange={handleInfoChange}
         />
       </form>
-      <div className="info-buttons">
-        <button type="button" onClick={editButtonHandle} id='info-edit-btn' >Edit</button>
-        <button type="submit" onClick={saveButtonHandle} id='info-save-btn' >Save</button>
-        <button type="reset" onClick={clearButtonHandle} id='info-clear-btn' >Clear</button>
+      <div className='info-buttons'>
+        <button type='button' onClick={editButtonHandle} id='info-edit-btn' >Edit</button>
+        <button type='submit' onClick={saveButtonHandle} id='info-save-btn' >Save</button>
+        <button type='reset' onClick={clearButtonHandle} id='info-clear-btn' >Clear</button>
       </div>
     </div>
   );

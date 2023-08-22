@@ -123,6 +123,10 @@ function App() {
       setEducationInputValue(
         ...educationList.filter(entry => entry.id === entryId)
       );
+    } else if (fieldType === 'exp') {
+      setExperienceInputValue(
+        ...experienceList.filter(entry => entry.id === entryId)
+      );
     }
   }
 
@@ -140,7 +144,7 @@ function App() {
     }
     
     if (fieldType === 'exp') {
-      setEducationList([
+      setExperienceList([
         ...experienceList.map(entry => {
           if(entry.id === entryId) {
             return {...entry, ...experienceInputValue}
@@ -158,7 +162,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className="main-area">
+      <div className='main-area'>
         <InputSection
           handleInfoChange={handleInfoCardChange}
           handleEducationChange={handleEducationCardChange}
