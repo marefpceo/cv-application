@@ -118,6 +118,43 @@ function App() {
     }
   }
 
+  function editEntry(fieldType, entryId) {
+    if (fieldType === 'edu') {
+      setEducationInputValue(
+        ...educationList.filter(entry => entry.id === entryId)
+      );
+    }
+  }
+
+  function saveEntry(fieldType, entryId) {
+    if (fieldType === 'edu') {
+      setEducationList([
+        ...educationList.map(entry => {
+          if(entry.id === entryId) {
+            return {...entry, ...educationInputValue}
+          }
+          return entry;
+        })
+      ]); 
+      setEducationInputValue(educationInitialState);
+    }
+    
+    if (fieldType === 'exp') {
+      setEducationList([
+        ...experienceList.map(entry => {
+          if(entry.id === entryId) {
+            return {...entry, ...experienceInputValue}
+          }
+          return entry;
+        })
+      ]); 
+      setExperienceInputValue(experienceInitialState);
+    }
+
+    
+    
+  }
+
   return (
     <>
       <Header />
@@ -133,7 +170,9 @@ function App() {
           experienceList={experienceList}
           educationInputValue={educationInputValue}
           experienceInputValue={experienceInputValue}
-          deleteEntry={deleteEntry}          
+          deleteEntry={deleteEntry}
+          editEntry={editEntry}       
+          saveEntry={saveEntry}   
         />
         <DisplayArea
           infoInputValue={infoInputValue}
