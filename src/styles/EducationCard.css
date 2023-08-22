@@ -42,7 +42,7 @@
   scrollbar-width: none;
 }
 
-.school-list::-webkit-scrollbar{
+.school-list::-webkit-scrollbar {
   display: none;
 }
 

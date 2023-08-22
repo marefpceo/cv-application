@@ -13,7 +13,7 @@ function App() {
     title: '',
     email: '',
     phone: '',
-  }
+  };
 
   const educationInitialState = {
     id: uniqid(),
@@ -22,8 +22,8 @@ function App() {
     graduationDate: '',
     schoolCity: '',
     schoolState: '',
-    schoolCountry: ''
-  }
+    schoolCountry: '',
+  };
 
   const experienceInitialState = {
     id: uniqid(),
@@ -32,12 +32,16 @@ function App() {
     companyState: '',
     position: '',
     startDate: '',
-    endDate: ''
-  }
+    endDate: '',
+  };
 
   const [infoInputValue, setInfoInputValue] = useState(infoInitialState);
-  const [educationInputValue, setEducationInputValue] = useState(educationInitialState);
-  const [experienceInputValue, setExperienceInputValue] = useState(experienceInitialState);
+  const [educationInputValue, setEducationInputValue] = useState(
+    educationInitialState,
+  );
+  const [experienceInputValue, setExperienceInputValue] = useState(
+    experienceInitialState,
+  );
   const [educationList, setEducationList] = useState([]);
   const [experienceList, setExperienceList] = useState([]);
 
@@ -81,12 +85,9 @@ function App() {
       setEducationInputValue({
         id: uniqid(''),
       });
-    }    
+    }
 
-    setEducationList([
-      ...educationList,
-      { ...educationInputValue }
-    ]);
+    setEducationList([...educationList, { ...educationInputValue }]);
 
     setEducationInputValue(educationInitialState);
   }
@@ -94,38 +95,31 @@ function App() {
   function experienceAddHandle() {
     if (experienceInputValue.id === '') {
       setExperienceInputValue({
-        id: uniqid('')
+        id: uniqid(''),
       });
     }
 
-    setExperienceList([
-      ...experienceList,
-      { ...experienceInputValue }
-    ]);
+    setExperienceList([...experienceList, { ...experienceInputValue }]);
 
     setExperienceInputValue(experienceInitialState);
   }
 
   function deleteEntry(fieldType, entryId) {
     if (fieldType === 'edu') {
-      setEducationList(
-        educationList.filter(entry => entry.id !== entryId)
-      );
+      setEducationList(educationList.filter((entry) => entry.id !== entryId));
     } else if (fieldType === 'exp') {
-      setExperienceList(
-        experienceList.filter(entry => entry.id !== entryId)
-      );
+      setExperienceList(experienceList.filter((entry) => entry.id !== entryId));
     }
   }
 
   function editEntry(fieldType, entryId) {
     if (fieldType === 'edu') {
       setEducationInputValue(
-        ...educationList.filter(entry => entry.id === entryId)
+        ...educationList.filter((entry) => entry.id === entryId),
       );
     } else if (fieldType === 'exp') {
       setExperienceInputValue(
-        ...experienceList.filter(entry => entry.id === entryId)
+        ...experienceList.filter((entry) => entry.id === entryId),
       );
     }
   }
@@ -133,36 +127,33 @@ function App() {
   function saveEntry(fieldType, entryId) {
     if (fieldType === 'edu') {
       setEducationList([
-        ...educationList.map(entry => {
-          if(entry.id === entryId) {
-            return {...entry, ...educationInputValue}
+        ...educationList.map((entry) => {
+          if (entry.id === entryId) {
+            return { ...entry, ...educationInputValue };
           }
           return entry;
-        })
-      ]); 
+        }),
+      ]);
       setEducationInputValue(educationInitialState);
     }
-    
+
     if (fieldType === 'exp') {
       setExperienceList([
-        ...experienceList.map(entry => {
-          if(entry.id === entryId) {
-            return {...entry, ...experienceInputValue}
+        ...experienceList.map((entry) => {
+          if (entry.id === entryId) {
+            return { ...entry, ...experienceInputValue };
           }
           return entry;
-        })
-      ]); 
+        }),
+      ]);
       setExperienceInputValue(experienceInitialState);
     }
-
-    
-    
   }
 
   return (
     <>
       <Header />
-      <div className='main-area'>
+      <div className="main-area">
         <InputSection
           handleInfoChange={handleInfoCardChange}
           handleEducationChange={handleEducationCardChange}
@@ -175,8 +166,8 @@ function App() {
           educationInputValue={educationInputValue}
           experienceInputValue={experienceInputValue}
           deleteEntry={deleteEntry}
-          editEntry={editEntry}       
-          saveEntry={saveEntry}   
+          editEntry={editEntry}
+          saveEntry={saveEntry}
         />
         <DisplayArea
           infoInputValue={infoInputValue}

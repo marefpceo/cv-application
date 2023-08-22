@@ -21,13 +21,13 @@ function InputSection({
   editEntry,
   saveEntry,
   educationInputValue,
-  experienceInputValue
+  experienceInputValue,
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
-  
+
   return (
-    <section className='input-section'>
-      <nav id='input-nav'>
+    <section className="input-section">
+      <nav id="input-nav">
         <InputNavButtons
           icon={infoIconLight}
           alt={'General information tab'}
@@ -48,7 +48,7 @@ function InputSection({
         />
       </nav>
 
-      <div className='cards'>
+      <div className="cards">
         <InfoCard
           isActive={activeIndex === 0}
           handleInfoChange={handleInfoChange}
@@ -110,7 +110,7 @@ InputSection.propTypes = {
   educationList: PropTypes.array,
   experienceList: PropTypes.array,
   educationInputValue: PropTypes.object,
-  experienceInputValue: PropTypes.object
+  experienceInputValue: PropTypes.object,
 };
 
 export default InputSection;
