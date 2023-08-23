@@ -14,10 +14,9 @@ function Education({
   saveEntry,
   educationInputValue,
 }) {
-
   const [saveDisabled, setSaveDisabled] = useState(true);
   const [addDisabled, setAddDisabled] = useState(false);
- 
+
   return (
     <div id='education-card' style={{ display: isActive ? 'flex' : 'none' }}>
       <h2>Education</h2>
@@ -72,11 +71,12 @@ function Education({
       </form>
 
       <div className='education-buttons'>
-        <button 
-          type='button' 
-          id='education-add' 
+        <button
+          type='button'
+          id='education-add'
           disabled={addDisabled}
-          onClick={educationAddHandle}>
+          onClick={educationAddHandle}
+        >
           Add
         </button>
         <button

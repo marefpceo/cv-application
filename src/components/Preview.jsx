@@ -20,38 +20,37 @@ function Preview({
           <p>{title}</p>
         </div>
         <ul>
-            <li>
-              {' '}
-              <span className='preview-labels'>Email: </span> {email}{' '}
-            </li>
-            <li>
-              {' '}
-              <span className='preview-labels'>Phone: </span> {phone}{' '}
-            </li>
-          </ul>
-
+          <li>
+            {' '}
+            <span className='preview-labels'>Email: </span> {email}{' '}
+          </li>
+          <li>
+            {' '}
+            <span className='preview-labels'>Phone: </span> {phone}{' '}
+          </li>
+        </ul>
       </header>
 
       <section className='preview-education'>
-          <h3>Education</h3>
-          <hr />
+        <h3>Education</h3>
+        <hr />
 
-          <div className='school-info'>
-            {educationList &&
-              educationList.map((eduItem) => (
-                <div className='preview-edu' key={eduItem.id}>
-                  <p>{eduItem.graduationDate} </p>
-                  <div>
-                    <h4>{eduItem.school}</h4>
-                    <p>{eduItem.fieldOfStudy}</p>
-                    <p>
-                      {eduItem.schoolCity}, {eduItem.schoolState}{' '}
-                      {eduItem.schoolCountry}
-                    </p>
-                  </div>
+        <div className='school-info'>
+          {educationList &&
+            educationList.map((eduItem) => (
+              <div className='preview-edu' key={eduItem.id}>
+                <p>{eduItem.graduationDate} </p>
+                <div>
+                  <h4>{eduItem.school}</h4>
+                  <p>{eduItem.fieldOfStudy}</p>
+                  <p>
+                    {eduItem.schoolCity}, {eduItem.schoolState}{' '}
+                    {eduItem.schoolCountry}
+                  </p>
                 </div>
-              ))}
-          </div>
+              </div>
+            ))}
+        </div>
       </section>
 
       <section className='preview-experience'>
@@ -70,10 +69,13 @@ function Preview({
                     <h4>{expItem.company}</h4>
                     <p>{expItem.position}</p>
                   </div>
-                
-                <div className='company-location'>
-                  <p> {expItem.companyCity}, {expItem.companyState} </p>
-                </div>
+
+                  <div className='company-location'>
+                    <p>
+                      {' '}
+                      {expItem.companyCity}, {expItem.companyState}{' '}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}

@@ -1,5 +1,5 @@
 .display-area {
-   width: 100%;
+  width: 100%;
 }
 
 #preview {
@@ -37,7 +37,7 @@
   background-color: var(--header-bg);
   margin-top: 0;
   padding: 2% 0;
-  width: 100%;  
+  width: 100%;
   position: relative;
 }
 

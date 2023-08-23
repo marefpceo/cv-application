@@ -14,7 +14,6 @@ function Experience({
   editEntry,
   saveEntry,
 }) {
-
   const [saveDisabled, setSaveDisabled] = useState(true);
   const [addDisabled, setAddDisabled] = useState(false);
 
@@ -78,11 +77,12 @@ function Experience({
       </form>
 
       <div className='experience-buttons'>
-        <button 
-          type='button' 
-          id='experience-add' 
+        <button
+          type='button'
+          id='experience-add'
           disabled={addDisabled}
-          onClick={experienceAddHandle}>
+          onClick={experienceAddHandle}
+        >
           Add
         </button>
         <button

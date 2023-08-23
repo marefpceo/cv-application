@@ -21,13 +21,13 @@
   padding-right: 4rem;
 }
 
-.education-form input[name = 'graduationDate'] {
+.education-form input[name='graduationDate'] {
   width: 50%;
 }
 
-.education-form input[name = 'schoolCity'],
-.education-form input[name = 'schoolState'],
-.education-form input[name = 'schoolCountry'] {
+.education-form input[name='schoolCity'],
+.education-form input[name='schoolState'],
+.education-form input[name='schoolCountry'] {
   width: 25%;
 }
 
