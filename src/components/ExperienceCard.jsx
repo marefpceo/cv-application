@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import '../styles/ExperienceCard.css';
 import deleteIcon from '../assets/delete.png';
@@ -13,6 +14,10 @@ function Experience({
   editEntry,
   saveEntry,
 }) {
+
+  const [saveDisabled, setSaveDisabled] = useState(true);
+  const [addDisabled, setAddDisabled] = useState(false);
+
   return (
     <div id='experience-card' style={{ display: isActive ? 'flex' : 'none' }}>
       <h2>Experience</h2>
@@ -73,15 +78,21 @@ function Experience({
       </form>
 
       <div className='experience-buttons'>
-        <button type='button' id='experience-add' onClick={experienceAddHandle}>
+        <button 
+          type='button' 
+          id='experience-add' 
+          disabled={addDisabled}
+          onClick={experienceAddHandle}>
           Add
         </button>
         <button
           type='button'
           id='experience-save'
+          disabled={saveDisabled}
           onClick={() => {
             saveEntry('exp', experienceInputValue.id);
-            document.getElementById('experience-add').disabled = false;
+            setSaveDisabled(true);
+            setAddDisabled(false);
           }}
         >
           Save
@@ -101,9 +112,9 @@ function Experience({
                 alt='Edit entry'
                 className='list-icons'
                 onClick={(e) => {
+                  setSaveDisabled(false);
+                  setAddDisabled(true);
                   editEntry('exp', e.target.parentNode.id);
-                  document.getElementById('experience-save').disabled = false;
-                  document.getElementById('experience-add').disabled = true;
                 }}
               />
               <img

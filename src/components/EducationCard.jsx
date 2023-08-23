@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import '../styles/EducationCard.css';
 import deleteIcon from '../assets/delete.png';
 import editIcon from '../assets/pencil.png';
+import { useState } from 'react';
 
 function Education({
   isActive,
@@ -13,6 +14,10 @@ function Education({
   saveEntry,
   educationInputValue,
 }) {
+
+  const [saveDisabled, setSaveDisabled] = useState(true);
+  const [addDisabled, setAddDisabled] = useState(false);
+ 
   return (
     <div id='education-card' style={{ display: isActive ? 'flex' : 'none' }}>
       <h2>Education</h2>
@@ -67,15 +72,21 @@ function Education({
       </form>
 
       <div className='education-buttons'>
-        <button type='button' id='education-add' onClick={educationAddHandle}>
+        <button 
+          type='button' 
+          id='education-add' 
+          disabled={addDisabled}
+          onClick={educationAddHandle}>
           Add
         </button>
         <button
           type='button'
           id='education-save'
+          disabled={saveDisabled}
           onClick={() => {
             saveEntry('edu', educationInputValue.id);
-            document.getElementById('education-add').disabled = false;
+            setSaveDisabled(true);
+            setAddDisabled(false);
           }}
         >
           Save
@@ -95,9 +106,9 @@ function Education({
                 alt='Edit entry'
                 className='list-icons'
                 onClick={(e) => {
+                  setSaveDisabled(false);
+                  setAddDisabled(true);
                   editEntry('edu', e.target.parentNode.id);
-                  document.getElementById('education-save').disabled = false;
-                  document.getElementById('education-add').disabled = true;
                 }}
               />
               <img
