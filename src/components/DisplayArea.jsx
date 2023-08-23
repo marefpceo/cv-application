@@ -4,7 +4,7 @@ import '../styles/DisplayArea.css';
 
 function DisplayArea({ infoInputValue, experienceList, educationList }) {
   return (
-    <div className="display-area">
+    <div className='display-area'>
       <Preview
         {...infoInputValue}
         experienceList={experienceList}

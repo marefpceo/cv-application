@@ -10,7 +10,9 @@
 }
 
 .main-area {
-  display: flex;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin: 0 5%;
   height: 100%;
   overflow: hidden;
 }

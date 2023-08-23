@@ -1,7 +1,5 @@
 .display-area {
-  /* display: grid;
-  grid-template-rows: 10% 90%; */
-  width: 100%;
+   width: 100%;
 }
 
 #preview {
@@ -12,10 +10,9 @@
   --text-dark: #141414;
   display: flex;
   flex-direction: column;
-  background-color: var(--preview-bg);
-  margin: 5% auto;
-  width: 61%;
-  height: 90%;
+  background-color: white;
+  margin: 0 auto;
+  height: 100%;
   box-shadow: 1px 1px 5px 0px #2a2c24;
   position: relative;
 }
@@ -34,32 +31,39 @@
 }
 
 .preview-header {
+  display: flex;
+  justify-content: space-around;
   color: var(--text-light);
   background-color: var(--header-bg);
-  margin-top: 5%;
-  height: 15%;
-  width: 100%;
+  margin-top: 0;
+  padding: 2% 0;
+  width: 100%;  
   position: relative;
-  z-index: 1;
 }
 
 .preview-header h2 {
   font-size: 2vw;
   text-align: start;
   margin: 0;
-  height: 100%;
   padding-top: 10px;
+}
+
+.preview-header ul {
+  font-size: 1rem;
+}
+
+.preview-header li {
+  list-style: none;
+  text-align: start;
 }
 
 .header-name {
   margin: 0;
   width: 50%;
-  position: absolute;
-  left: 45%;
 }
 
 .header-name p {
-  font-size: 1vw;
+  font-size: 1rem;
   text-align: start;
   margin: 0;
   padding-bottom: 5px;
@@ -69,70 +73,61 @@
   font-weight: bold;
 }
 
-#preview-aside {
+.preview-education {
   background-color: var(--aside-bg);
   color: var(--text-dark);
-  width: 35%;
-  height: 100%;
-  margin-left: 5%;
-  position: absolute;
-  z-index: 3;
+  padding-bottom: 3%;
 }
 
-#preview-aside ul {
-  padding-left: 5%;
-  font-size: 75%;
+.preview-education h3 {
+  margin: 2%;
 }
 
-#preview-aside li {
-  list-style: none;
-  text-align: start;
-}
-
-.preview-contact {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10%;
-}
-
-#profile-image img {
-  max-width: 60%;
-}
-
-.school-info {
+.school-info,
+.experience-info {
   display: flex;
   flex-direction: column;
   gap: 5%;
   font-size: 0.8vw;
-  padding: 5%;
+  padding: 2% 10%;
 }
 
-.preview-edu {
+.preview-edu,
+.preview-exp {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10%;
   align-items: start;
   text-align: start;
 }
 
-.preview-edu p {
+.preview-edu h4,
+.preview-exp h4 {
+  margin: 0;
+}
+
+.preview-edu div p:first-of-type,
+.company-info p:first-of-type {
+  font-style: italic;
+}
+
+.preview-edu :first-child,
+.experience-dates {
+  font-weight: bold;
+}
+
+.preview-edu p,
+.company p {
   margin: 0;
 }
 
 .preview-experience {
   color: var(--text-dark);
   background-color: white;
-  width: 60%;
-  height: 82%;
-  position: absolute;
-  top: 18%;
-  left: 40%;
 }
 
-.experience-div {
+.company {
   display: flex;
-  font-size: 0.8vw;
-  justify-content: start;
-  gap: 5%;
-  padding: 0 5%;
+  flex-direction: column;
+  text-align: start;
 }

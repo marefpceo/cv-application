@@ -21,6 +21,16 @@
   padding-right: 4rem;
 }
 
+.education-form input[name = 'graduationDate'] {
+  width: 50%;
+}
+
+.education-form input[name = 'schoolCity'],
+.education-form input[name = 'schoolState'],
+.education-form input[name = 'schoolCountry'] {
+  width: 25%;
+}
+
 .education-form input {
   width: 0 auto;
 }
@@ -66,4 +76,8 @@
   width: 30px;
   height: 30px;
   margin: 0 5px;
+}
+
+.list-icons:hover {
+  cursor: pointer;
 }

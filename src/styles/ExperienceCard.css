@@ -1,4 +1,9 @@
 #experience-card {
+  --header-bg: #807166;
+  --aside-bg: #baa495;
+  --preview-bg: #c8c6c2;
+  --text-light: #ffffff;
+  --text-dark: #141414;
   display: flex;
   flex-direction: column;
   width: 0 auto;
@@ -15,7 +20,7 @@
 .position,
 .dates {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 25%);
   text-align: end;
 }
 
@@ -36,4 +41,36 @@
   margin: 0 2rem;
   width: 100px;
   height: 25px;
+}
+
+.experience-list {
+  margin-top: 5%;
+  overflow-y: scroll;
+  -ms-text-overflow: none;
+  scrollbar-width: none;
+}
+
+.experience-list::-webkit-scrollbar {
+  display: none;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 3% auto;
+  padding: 2% 4%;
+  width: 90%;
+  border: 1pt solid var(--aside-bg);
+  border-radius: 10px;
+  text-align: start;
+}
+
+.list-icons:hover {
+  cursor: pointer;
+}
+
+.list-icons {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
 }

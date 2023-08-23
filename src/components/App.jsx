@@ -153,7 +153,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className="main-area">
+      <div className='main-area'>
         <InputSection
           handleInfoChange={handleInfoCardChange}
           handleEducationChange={handleEducationCardChange}
